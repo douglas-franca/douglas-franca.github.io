@@ -5,7 +5,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/douglas-franca.github.io/',
+  base: 'douglas-franca.github.io/',
   plugins: [
     vue(),
     vuetify({
