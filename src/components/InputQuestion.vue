@@ -15,6 +15,8 @@ const scrollToBottom = () => {
 };
 
 const fetchData = async (questionText) => {
+  if (!questionText) return;
+
   messages.value.push({ text: questionText, type: 'question' });
   messages.value.push({ isLoading: true });
   isLoading.value = true;
@@ -38,43 +40,51 @@ const setFocus = () => {
 
 onMounted(() => {
   setFocus();
+  setTimeout(() => {
+    fetchData('What is your first name?');
+  }, 1000);
 });
 </script>
 
 <template>
   <div class="chat-container">
-    <div class="messages-container" ref="messagesContainer">
-      <div class="width-objects">
-      <v-list-item
-        v-for="message in messages"
-        :key="message.text"
-        class="space-between-messages"
-      >
-        <v-row :class="message.type === 'question' ? 'justify-end' : 'justify-start'">
-          <v-col cols="1" v-if="message.type === 'answer'">
-            <v-avatar size="30">
-              <img :src="douglasImage" alt="Douglas" style="height: 30px;" />
-            </v-avatar>
-          </v-col>
-          <v-col
-            cols="8"
-            :order="message.type === 'question' ? 1 : 2"
-            :class="message.type === 'question' ? 'd-flex flex-row-reverse' : ''"
+    <div class="messages-container">
+      <div class="list-container" ref="messagesContainer">
+        <div class="width-objects">
+          <v-list-item
+            v-for="message in messages"
+            :key="message.text"
+            class="space-between-messages"
           >
-            <v-skeleton-loader
-              v-if="message.isLoading"
-              type="list-item-avatar-three-line"
-            />
-            <span v-else>
-              <p :class="[message.type === 'question' ? 'question-style text-right' : 'text-left']">
-                <TypingEffect :text="message.text" :scrolled="scrollToBottom" />
-              </p>
-            </span>
-          </v-col>
-
-        </v-row>
-      </v-list-item>
-    </div>
+            <v-row :class="message.type === 'question' ? 'justify-end' : 'justify-start'">
+              <v-col cols="1" v-if="message.type === 'answer'">
+                <v-avatar size="30">
+                  <img :src="douglasImage" alt="Douglas" style="height: 30px;" />
+                </v-avatar>
+              </v-col>
+              <v-col
+                cols="9"
+                :order="message.type === 'question' ? 1 : 2"
+                :class="{ 'text-right': message.type === 'question' }"
+              >
+                <v-skeleton-loader
+                  v-if="message.isLoading"
+                  type="list-item-avatar-three-line"
+                />
+                <span v-else>
+                  <p
+                    class="text-justify"
+                    :class="{ 'question-style': message.type === 'question' }"
+                  >
+                    <TypingEffect :text="message.text" :scrolled="scrollToBottom" />
+                  </p>
+                </span>
+              </v-col>
+  
+            </v-row>
+          </v-list-item>
+        </div>
+      </div>
     </div>
     <div class="input-container width-objects">
       <v-text-field
@@ -87,6 +97,8 @@ onMounted(() => {
         variant="solo"
         :loading="isLoading"
         :disabled="isLoading"
+        append-inner-icon="mdi-send"
+        @click:append-inner="fetchData(question)"
       ></v-text-field>
     </div>
   </div>
@@ -110,18 +122,24 @@ onMounted(() => {
   align-items: center;
 }
 
+.list-container {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .width-objects {
   width: 100%;
   max-width: 48rem;
 }
 
 .messages-container {
-  flex: 1;
-  overflow-y: auto;
+  flex: 1 1 0%;
+  overflow: hidden;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .input-container {

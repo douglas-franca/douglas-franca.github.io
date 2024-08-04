@@ -3,11 +3,7 @@ import NavBar from './components/NavBar.vue';
 </script>
 
 <template>
-  <v-app>
-    <!-- <v-main class="custom-main"> -->
-      <NavBar/>
-    <!-- </v-main> -->
-  </v-app>
+  <NavBar/>
 </template>
 
 <style scoped>

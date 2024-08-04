@@ -54,10 +54,8 @@ const isMobile = computed(() => smAndDown.value);
       </v-list>
     </v-navigation-drawer>
 
-    <v-main class="height-100">
-      <div class="height-100-percent">
-        <router-view class="height-100-percent" />
-      </div>
+    <v-main>
+      <router-view class="height-100-percent" />
     </v-main>
   </v-app>
 </template>

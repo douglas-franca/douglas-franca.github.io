@@ -5,7 +5,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: 'douglas-franca.github.io/',
+  base: '/',
   plugins: [
     vue(),
     vuetify({
@@ -16,9 +16,6 @@ export default defineConfig({
     '__VUE_OPTIONS_API__': true,
     '__VUE_PROD_DEVTOOLS__': false,
     '__VUE_PROD_HYDRATION_MISMATCH_DETAILS__': false,
-    'process.env': {
-      BACK_END_API: process.env.VITE_BACK_END_API,
-    },
   },
   resolve: {
     alias: {
