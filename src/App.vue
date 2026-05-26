@@ -1,13 +1,19 @@
 <script setup>
-import NavBar from './components/NavBar.vue';
+import Hero from './components/Hero.vue'
+import About from './components/About.vue'
+import Experience from './components/Experience.vue'
+import Stack from './components/Stack.vue'
+import Footer from './components/Footer.vue'
+import ThemeToggle from './components/ThemeToggle.vue'
 </script>
 
 <template>
-  <NavBar/>
+  <main class="page-shell">
+    <ThemeToggle />
+    <Hero />
+    <About />
+    <Experience />
+    <Stack />
+    <Footer />
+  </main>
 </template>
-
-<style scoped>
-.custom-main {
-  --v-layout-top: 0px !important;
-}
-</style>

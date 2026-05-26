@@ -1,0 +1,34 @@
+{
+  "title": "Experience",
+  "description": "A short timeline of the products, teams, and systems I have worked on.",
+  "items": [
+    {
+      "date": "2024 - Present",
+      "title": "Full-stack Software Engineer",
+      "meta": {
+        "name": "MinhaVisita",
+        "url": "https://minhavisita.app/"
+      },
+      "description": [
+        "I work using the Scrum methodology to ensure efficient and iterative development.",
+        "I implement new screens, fix bugs, and maintain the system using Vue.js, Quasar, and Capacitor.",
+        "I support back-end services built with NestJS, GraphQL, and PHP when needed.",
+        "I improved CI/CD workflows, added Cypress coverage for core flows, and helped increase release frequency."
+      ]
+    },
+    {
+      "date": "2022 - 2024",
+      "title": "Full-stack Software Engineer",
+      "meta": {
+        "name": "Scopi",
+        "url": "https://scopi.com.br/"
+      },
+      "description": [
+        "I developed and enhanced Scopi, a strategic planning platform with several connected modules.",
+        "I built and maintained front-end modules in AngularJS and supported the React Native mobile app.",
+        "I created back-end modules and public API integrations using Ruby on Rails, MySQL, and Redis.",
+        "I optimized critical calculations from 4 minutes to 3 seconds and introduced Vue.js as a migration path."
+      ]
+    }
+  ]
+}

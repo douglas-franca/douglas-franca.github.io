@@ -1,0 +1,27 @@
+{
+  "title": "Education",
+  "items": [
+    {
+      "date": "2022 - Present",
+      "title": "Bachelor of Science in Computer Science",
+      "meta": {
+        "name": "Feevale University",
+        "url": "http://feevale.br"
+      },
+      "description": [
+        "Currently pursuing a degree in Computer Science, with a strong focus on software development, algorithms, and systems architecture."
+      ]
+    },
+    {
+      "date": "2016 - 2020",
+      "title": "Technical Course in Information Technology",
+      "meta": {
+        "name": "Feevale University",
+        "url": "http://feevale.br"
+      },
+      "description": [
+        "Completed a technical course with hands-on experience in web development, HTML, CSS, JavaScript, Java, and C."
+      ]
+    }
+  ]
+}

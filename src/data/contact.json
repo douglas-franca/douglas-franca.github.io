@@ -1,0 +1,22 @@
+{
+  "title": "Contact",
+  "description": "Want to talk about a project or opportunity? These are the best places to reach me.",
+  "links": [
+    {
+      "label": "douglasdf2809@gmail.com",
+      "href": "mailto:douglasdf2809@gmail.com"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/douglas-franca"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/douglas-sfranca/"
+    },
+    {
+      "label": "Portfolio",
+      "href": "https://douglas-franca.github.io/"
+    }
+  ]
+}

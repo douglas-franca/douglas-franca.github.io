@@ -1,13 +1,13 @@
 import { createApp } from 'vue'
+import './style.css'
 import App from './App.vue'
-import vuetify from './plugins/vuetify'
-import { loadFonts } from './plugins/webfontloader'
-import router from './router'
-import './assets/css/global.css'
 
-loadFonts()
+import DF from './assets/DF.png'
 
-createApp(App)
-  .use(vuetify)
-  .use(router)
-  .mount('#app')
+const favicon = document.querySelector('link#favicon') || document.createElement('link')
+favicon.id = 'favicon'
+favicon.rel = 'icon'
+favicon.href = DF
+document.head.appendChild(favicon)
+
+createApp(App).mount('#app')
